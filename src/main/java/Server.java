@@ -31,7 +31,9 @@ public class Server {
             while(true) {
 
                 line_from_client = in.readUTF();
+
                 String myLine = "none";
+
 
                  if(line_from_client.equals("hello")){
                      if(count_connection==0){
@@ -39,6 +41,11 @@ public class Server {
                      }
                      else  myLine = "You2";
                  }
+
+                if(line_from_client.substring(0,1).equals("1")){
+
+                    
+                }
 
                 out.writeUTF(myLine); // отсылаем клиенту обратно ту самую строку текста.
                 out.flush(); // заставляем поток закончить передачу данных.
